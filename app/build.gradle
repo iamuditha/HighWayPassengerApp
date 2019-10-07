@@ -48,5 +48,6 @@ dependencies {
 
     //country code picker
     implementation 'com.hbb20:ccp:2.3.2'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
 }
