@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "877970943293",
+    "firebase_url": "https://highwayseatreservation.firebaseio.com",
+    "project_id": "highwayseatreservation",
+    "storage_bucket": "highwayseatreservation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877970943293:android:dce8a95d086c0565c4a954",
+        "android_client_info": {
+          "package_name": "com.example.passenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877970943293-lcbe7g9cbg0i1hvo7iveah3ra8vrjrja.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.passenger",
+            "certificate_hash": "23b1524afa25a71ff4b0b07caed8ea0f609dde28"
+          }
+        },
+        {
+          "client_id": "877970943293-tdgp21fbrb7e6svggg22iienhnkcji69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgrfV-iKe5jmOeNTEBLsCGI6cqbHAwEsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877970943293-tdgp21fbrb7e6svggg22iienhnkcji69.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

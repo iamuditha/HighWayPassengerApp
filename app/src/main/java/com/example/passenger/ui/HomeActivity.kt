@@ -51,14 +51,6 @@ class HomeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-//
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        if (fragmentManager.backStackEntryCount == 1 ) {
-//            this.finish();
-//        } else {
-//            fragmentManager.popBackStack()
-//        }
-//    }
+
 
 }

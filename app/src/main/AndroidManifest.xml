@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.passenger">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ResetPasswordActivity"></activity>
+        <activity android:name=".ui.SeatBookingActivity"></activity>
+        <activity android:name=".ui.ResetPasswordActivity" />
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.LoginActivity">
@@ -23,9 +29,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBhnR5CvIoMSNeTeupLL4Fn2YZu9Ule-6g" />
-
     </application>
 
 </manifest>
-
-    <!--    AIzaSyBhnR5CvIoMSNeTeupLL4Fn2YZu9Ule-6g-->
