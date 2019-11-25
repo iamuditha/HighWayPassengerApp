@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.passenger.R
-import com.example.passenger.ui.SeatBookingActivity
+import com.example.passenger.ui.MainActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -27,7 +27,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         mapView.getMapAsync(this)
 
         buttonSeatBook.setOnClickListener {
-            val intent = Intent(this.context, SeatBookingActivity::class.java)
+            val intent = Intent(this.context, MainActivity::class.java)
             startActivity(intent)
         }
     }

@@ -14,8 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SeatBookingActivity"></activity>
+        <activity android:name=".ui.BusActivity"></activity>
+        <activity android:name=".ui.SeatBookingActivity" />
         <activity android:name=".ui.ResetPasswordActivity" />
+        <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.LoginActivity">

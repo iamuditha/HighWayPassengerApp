@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@android:color/white"
+    android:elevation="4dp"
+    android:orientation="horizontal"
+
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="89dp"
+        android:layout_height="match_parent"
+        android:background="#ECE8E8"
+        android:gravity="center_horizontal|center_vertical"
+        android:lines="2"
+        android:textColor="#D14854"
+        android:textSize="22sp"
+        tools:text="Sunday" />
+
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="248dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_weight="1"
+        android:background="#ECE8E8"
+        android:gravity="start|center_vertical"
+        android:textColor="#2196F3"
+        android:textSize="22sp"
+        tools:text="clear sky" />
+
+    <TextView
+        android:id="@+id/temperatureText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#ECE8E8"
+        android:gravity="center_vertical|end"
+        android:textColor="#FF9800"
+        android:textSize="36sp"
+        tools:text="28" />
+
+</LinearLayout>
