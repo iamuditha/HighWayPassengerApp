@@ -1,10 +1,8 @@
 package com.example.passenger.ui
 
-import java.util.*
-
-data class Photographer(
+data class Bus(
     val id: Int,
-    val time: Date,
-    val temperature: Float,
+    val time: String,
+    val ratings: Float,
     val description: String
 )

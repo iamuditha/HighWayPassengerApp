@@ -17,17 +17,17 @@ import kotlinx.android.synthetic.main.bus_list_item.view.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val photographerRepo = photographerRepository()
+    private val photographerRepo = BusDetailRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val data = photographerRepo.fetchPhotograpoherData()
+        val data = photographerRepo.fetchBusData()
         populateListView(data)
     }
 
-    private fun populateListView(data: List<Photographer>) {
+    private fun populateListView(data: List<Bus>) {
         photographerList.apply {
             //setHasFixedSize(true)
             Log.v("test4", "populateListView called")
@@ -39,13 +39,13 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-class PhotographerAdapter(var context: Context, private val data: List<Photographer>) :
+class PhotographerAdapter(var context: Context, private val data: List<Bus>) :
     RecyclerView.Adapter<PhotographerAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         val timeText: TextView = view.timeText
-        val temperatureText: TextView = view.temperatureText
+        val ratingText: TextView = view.temperatureText
         val descriptionText: TextView = view.descriptionText
     }
 
@@ -59,11 +59,11 @@ class PhotographerAdapter(var context: Context, private val data: List<Photograp
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val photographer = data[position]
-        Log.v("test3", "onBindViewHolder called " + photographer.id)
-        holder.timeText.text = photographer.time.formatForWeather()
-        holder.descriptionText.text = photographer.description
-        holder.temperatureText.text = photographer.temperature.toString()//.formatTemperature()
+        val bus = data[position]
+        Log.v("test3", "onBindViewHolder called " + bus.id)
+        holder.timeText.text = bus.time
+        holder.descriptionText.text = bus.description
+        holder.ratingText.text = "rating" + " " + bus.ratings.toString()//.formatTemperature()
 
         holder.descriptionText.setOnClickListener {
             seatBooking()

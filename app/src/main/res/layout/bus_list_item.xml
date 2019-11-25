@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/timeText"
-        android:layout_width="89dp"
+        android:layout_width="120dp"
         android:layout_height="match_parent"
         android:background="#ECE8E8"
         android:gravity="center_horizontal|center_vertical"
@@ -22,7 +22,7 @@
 
     <TextView
         android:id="@+id/descriptionText"
-        android:layout_width="248dp"
+        android:layout_width="200dp"
         android:layout_height="match_parent"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
@@ -37,12 +37,12 @@
 
     <TextView
         android:id="@+id/temperatureText"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
         android:background="#ECE8E8"
         android:gravity="center_vertical|end"
         android:textColor="#FF9800"
-        android:textSize="36sp"
+        android:textSize="22sp"
         tools:text="28" />
 
 </LinearLayout>
