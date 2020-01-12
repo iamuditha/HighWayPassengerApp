@@ -15,31 +15,37 @@ import com.example.passenger.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bus_list_item.view.*
 
+
 class MainActivity : AppCompatActivity() {
+
 
     private val photographerRepo = BusDetailRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val Rou = intent.getStringExtra("route")
+
 
         val data = photographerRepo.fetchBusData()
-        populateListView(data)
+        populateListView(data, Rou)
+
+//    Log.i("passing",Rou)
     }
 
-    private fun populateListView(data: List<Bus>) {
+    private fun populateListView(data: List<Bus>, Route: String) {
         photographerList.apply {
             //setHasFixedSize(true)
             Log.v("test4", "populateListView called")
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = PhotographerAdapter(context, data)
+            adapter = PhotographerAdapter(context, data, Route)
             Log.v("test4", "populateListView called")
         }
     }
 }
 
 
-class PhotographerAdapter(var context: Context, private val data: List<Bus>) :
+class PhotographerAdapter(var context: Context, private val data: List<Bus>, val route: String) :
     RecyclerView.Adapter<PhotographerAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -47,6 +53,7 @@ class PhotographerAdapter(var context: Context, private val data: List<Bus>) :
         val timeText: TextView = view.timeText
         val ratingText: TextView = view.temperatureText
         val descriptionText: TextView = view.descriptionText
+        val routeText: TextView = view.routeText
     }
 
     //create new view
@@ -61,9 +68,14 @@ class PhotographerAdapter(var context: Context, private val data: List<Bus>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val bus = data[position]
         Log.v("test3", "onBindViewHolder called " + bus.id)
-        holder.timeText.text = bus.time
-        holder.descriptionText.text = bus.description
-        holder.ratingText.text = "rating" + " " + bus.ratings.toString()//.formatTemperature()
+        if (bus.route == route) {
+            Log.v("test3", "printed " + bus.id)
+
+            holder.timeText.text = bus.time
+            holder.descriptionText.text = bus.description
+            holder.ratingText.text = "rating" + " " + bus.ratings.toString()//.formatTemperature()
+            holder.routeText.text = bus.route
+        }
 
         holder.descriptionText.setOnClickListener {
             seatBooking()

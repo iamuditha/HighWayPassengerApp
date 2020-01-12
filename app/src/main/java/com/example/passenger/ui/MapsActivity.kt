@@ -13,12 +13,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.passenger.R
-import com.example.passenger.TrackerActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_maps.*
 import java.util.*
 
@@ -41,7 +41,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         buttonSeatBook.setOnClickListener {
-            startActivity(Intent(this, TrackerActivity::class.java))
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("route", spinner.selectedItem.toString())
+
+            startActivity(intent)
         }
 
         val adapter = ArrayAdapter(
@@ -60,6 +63,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         spinner.adapter = adapter
 
         getDirections.setOnClickListener {
+            val data = FirebaseDatabase.getInstance().getReference("bus")
+            Log.i("data", data.toString())
 
             displayRoute(spinner.selectedItem.toString())
 

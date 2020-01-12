@@ -4,5 +4,6 @@ data class Bus(
     val id: Int,
     val time: String,
     val ratings: Float,
-    val description: String
+    val description: String,
+    val route: String
 )
