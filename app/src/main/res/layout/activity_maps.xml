@@ -12,12 +12,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView"
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="178dp"
-            tools:layout_editor_absoluteY="0dp"></com.google.android.gms.maps.MapView>
+            tools:context="com.example.passenger.ui.MapsActivity" />
 
         <Button
             android:id="@+id/buttonSeatBook"
