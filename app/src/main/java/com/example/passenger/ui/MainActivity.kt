@@ -76,7 +76,7 @@ class PhotographerAdapter(var context: Context, private val data: List<Bus>, val
             holder.ratingText.text = "rating" + " " + bus.ratings.toString()//.formatTemperature()
             holder.routeText.text = bus.route
             holder.descriptionText.setOnClickListener {
-                val intent = Intent(context, SeatBookingActivity::class.java)
+                val intent = Intent(context, PaymentActivity::class.java)
                 intent.putExtra("id", id)
                 Log.i("mId", id.toString())
                 context.startActivity(intent)
