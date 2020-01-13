@@ -27,6 +27,9 @@ class PayActivity : AppCompatActivity() {
         Log.i("pay", payment)
         val id = intent.getIntExtra("id", 1)
 
+        val halfPayment = (payment.toDouble() * 0.5).toString()
+        amountDisplay.text = halfPayment
+
 
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
@@ -48,7 +51,7 @@ class PayActivity : AppCompatActivity() {
 
                 builder = Notification.Builder(this, channelID)
                     .setContentTitle("Successfully done the payment")
-                    .setContentText("You Have paid RS. $payment to reserve the seats")
+                    .setContentText("You Have paid RS. $halfPayment to reserve the seats")
                     .setSmallIcon(R.drawable.ic_launcher_round)
                     .setLargeIcon(
                         BitmapFactory.decodeResource(
@@ -79,6 +82,9 @@ class PayActivity : AppCompatActivity() {
             intent1.putExtra("id", id)
             startActivity(intent1)
         }
+
+
+
 
 
     }

@@ -32,6 +32,15 @@ class PaymentActivity : AppCompatActivity() {
             ticketPrice = 600
             price.text = ticketPrice.toString()
         }
+        if (route == "Matara -> Kaduwela" || route == "Kaduwela -> Matara") {
+            ticketPrice = 500
+            price.text = ticketPrice.toString()
+        }
+
+        if (route == "Matara -> Makumbura" || route == "Makumbura -> Matara") {
+            ticketPrice = 400
+            price.text = ticketPrice.toString()
+        }
 
         if (type == "Office Bus") {
             discount.visibility = View.VISIBLE
