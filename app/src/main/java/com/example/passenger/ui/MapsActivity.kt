@@ -47,7 +47,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             startActivity(intent)
         }
 
-        val adapter = ArrayAdapter(
+        val adapter1 = ArrayAdapter(
             this, android.R.layout.simple_spinner_item,
             listOf(
                 "Select Route",
@@ -59,8 +59,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 "Kaduwela -> Matara"
             )
         )
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter1
+
+        val adapter2 = ArrayAdapter(
+            this, android.R.layout.simple_spinner_item,
+            listOf(
+                "Select Bus Type",
+                "Private Bus",
+                "SLTB",
+                "Office Bus"
+            )
+        )
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        busType.adapter = adapter2
 
         getDirections.setOnClickListener {
             val data = FirebaseDatabase.getInstance().getReference("bus")

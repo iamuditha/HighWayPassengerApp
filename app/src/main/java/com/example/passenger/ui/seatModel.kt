@@ -1,0 +1,37 @@
+package com.example.passenger.ui
+
+data class Seat(
+    val s1: Boolean,
+    var s2: Boolean,
+    val s3: Boolean,
+    var s4: Boolean,
+    val s5: Boolean,
+    var s6: Boolean,
+    val s7: Boolean,
+    var s8: Boolean,
+    val s9: Boolean,
+    var s10: Boolean,
+    val s11: Boolean,
+    var s12: Boolean,
+    val s13: Boolean,
+    var s14: Boolean,
+    val s15: Boolean,
+    var s16: Boolean,
+    val s17: Boolean,
+    var s18: Boolean,
+    val s19: Boolean,
+    var s20: Boolean,
+    val s21: Boolean,
+    var s22: Boolean,
+    val s23: Boolean,
+    var s24: Boolean,
+    val s25: Boolean,
+    var s26: Boolean,
+    val s27: Boolean,
+    var s28: Boolean,
+    val s29: Boolean,
+    var s30: Boolean,
+    val s31: Boolean,
+    var s32: Boolean
+
+)

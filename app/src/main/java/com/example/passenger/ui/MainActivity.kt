@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.bus_list_item.view.*
 class MainActivity : AppCompatActivity() {
 
 
-    private val photographerRepo = BusDetailRepository()
+    private val BusRepo = BusDetailRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val Rou = intent.getStringExtra("route")
 
 
-        val data = photographerRepo.fetchBusData()
+        val data = BusRepo.fetchBusData()
         populateListView(data, Rou)
 
 //    Log.i("passing",Rou)
@@ -70,20 +70,27 @@ class PhotographerAdapter(var context: Context, private val data: List<Bus>, val
         Log.v("test3", "onBindViewHolder called " + bus.id)
         if (bus.route == route) {
             Log.v("test3", "printed " + bus.id)
-
+            val id = bus.id
             holder.timeText.text = bus.time
             holder.descriptionText.text = bus.description
             holder.ratingText.text = "rating" + " " + bus.ratings.toString()//.formatTemperature()
             holder.routeText.text = bus.route
+            holder.descriptionText.setOnClickListener {
+                val intent = Intent(context, SeatBookingActivity::class.java)
+                intent.putExtra("id", id)
+                Log.i("mId", id.toString())
+                context.startActivity(intent)
+            }
+
         }
 
-        holder.descriptionText.setOnClickListener {
-            seatBooking()
-        }
+
     }
 
-    private fun seatBooking() {
+    private fun seatBooking(id: Int) {
         val intent = Intent(context, SeatBookingActivity::class.java)
+        intent.putExtra("id", id)
+        Log.i("mId", id.toString())
         context.startActivity(intent)
     }
 

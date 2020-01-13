@@ -21,9 +21,14 @@
 
         <Button
             android:id="@+id/buttonSeatBook"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_design"
             android:text="Start Booking"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.549"
@@ -33,9 +38,14 @@
 
         <Button
             android:id="@+id/getDirections"
-            android:layout_width="145dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_design"
             android:text="Get Directions"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/buttonSeatBook"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
@@ -58,6 +68,9 @@
 
         <Button
             android:id="@+id/clear"
+            android:background="@drawable/button_design"
+            android:gravity="center"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -66,6 +79,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/busType"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

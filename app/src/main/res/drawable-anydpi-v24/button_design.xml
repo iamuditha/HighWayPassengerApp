@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--signIn and SignUp Button Design-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="#D8860D" />
+
+    <corners android:radius="200dp" />
+
+
+</shape>
