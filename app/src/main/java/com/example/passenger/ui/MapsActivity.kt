@@ -43,6 +43,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         buttonSeatBook.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("route", spinner.selectedItem.toString())
+            intent.putExtra("type", busType.selectedItem.toString())
 
             startActivity(intent)
         }

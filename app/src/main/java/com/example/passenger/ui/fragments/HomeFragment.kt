@@ -10,11 +10,10 @@ import androidx.fragment.app.Fragment
 import com.example.passenger.R
 import com.example.passenger.ui.MapsActivity
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
-class HomeFragment : Fragment(), OnMapReadyCallback {
+class HomeFragment : Fragment() {
 
     private lateinit var googleMap: GoogleMap
     private val REQUEST_LOCATION_PERMISSION = 1
@@ -22,10 +21,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        mapView.onCreate(savedInstanceState)
-        mapView.onResume()
 
-        mapView.getMapAsync(this)
 
         buttonSeatBook.setOnClickListener {
             val intent = Intent(this.context, MapsActivity::class.java)
@@ -33,11 +29,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
-    override fun onMapReady(map: GoogleMap?) {
-        map?.let {
-            googleMap = it
-        }
-    }
 
 
     override fun onCreateView(
