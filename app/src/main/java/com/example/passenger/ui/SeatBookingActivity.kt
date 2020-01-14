@@ -1,5 +1,6 @@
 package com.example.passenger.ui
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -27,6 +28,10 @@ class SeatBookingActivity : AppCompatActivity() {
         Log.i("seat", data[busId].toString())
         Log.i("seat", data.size.toString())
         Log.i("seat", data[busId].s1.toString())
+
+        bookingconfirm.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
 
         if (!data[busId].s1) {
             seat1.setColorFilter(Color.RED)
